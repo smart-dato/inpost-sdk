@@ -1,0 +1,5 @@
+<?php
+
+use Smartdato\InPost\Tests\TestCase;
+
+uses(TestCase::class)->in(__DIR__);
