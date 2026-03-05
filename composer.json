@@ -1,6 +1,6 @@
 {
     "name": "smart-dato/inpost-sdk",
-    "description": "This is my package inpost-sdk",
+    "description": "A Laravel SDK for the InPost API — Shipping, Points, Tracking, Returns, and Pickups",
     "keywords": [
         "smart-dato",
         "laravel",
