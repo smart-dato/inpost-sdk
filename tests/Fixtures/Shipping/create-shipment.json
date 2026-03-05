@@ -1,0 +1,40 @@
+{
+    "id": "ship_123",
+    "status": "created",
+    "trackingNumber": "6340012345678901234",
+    "sender": {
+        "name": "Jan Kowalski",
+        "email": "jan@example.com",
+        "phone": "+48123456789"
+    },
+    "recipient": {
+        "name": "Anna Nowak",
+        "email": "anna@example.com",
+        "phone": "+48987654321"
+    },
+    "origin": {
+        "pointId": "KRA01A"
+    },
+    "destination": {
+        "pointId": "WAW02B"
+    },
+    "parcels": [
+        {
+            "id": "parcel_1",
+            "type": "standardParcel",
+            "dimensions": {
+                "length": 200,
+                "width": 150,
+                "height": 100,
+                "unit": "mm"
+            },
+            "weight": {
+                "amount": 2.5,
+                "unit": "kg"
+            },
+            "trackingNumber": "6340012345678901234"
+        }
+    ],
+    "createdAt": "2026-03-05T10:00:00Z",
+    "updatedAt": "2026-03-05T10:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+    "parcels": [
+        {
+            "trackingNumber": "6340012345678901234",
+            "status": "delivered",
+            "service": "inpost_locker_standard",
+            "events": [
+                {
+                    "type": "delivery",
+                    "status": "delivered",
+                    "description": "Parcel delivered to locker",
+                    "datetime": "2026-03-05T14:30:00Z",
+                    "locationName": "WAW02B"
+                },
+                {
+                    "type": "transit",
+                    "status": "in_transit",
+                    "description": "Parcel in transit",
+                    "datetime": "2026-03-05T08:00:00Z",
+                    "locationName": "Sorting Hub Warsaw"
+                }
+            ]
+        }
+    ]
+}

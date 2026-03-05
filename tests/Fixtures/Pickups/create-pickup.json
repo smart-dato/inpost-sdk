@@ -1,0 +1,24 @@
+{
+    "id": "pickup_789",
+    "status": "requested",
+    "type": "standard",
+    "address": {
+        "street": "ul. Testowa",
+        "buildingNumber": "5",
+        "city": "Warszawa",
+        "postalCode": "00-001",
+        "countryCode": "PL"
+    },
+    "contactPerson": {
+        "name": "Jan Kowalski",
+        "email": "jan@example.com",
+        "phone": "+48123456789"
+    },
+    "pickupTime": {
+        "date": "2026-03-06",
+        "timeFrom": "10:00",
+        "timeTo": "14:00"
+    },
+    "parcelCount": 3,
+    "createdAt": "2026-03-05T10:00:00Z"
+}

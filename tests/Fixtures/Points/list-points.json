@@ -1,0 +1,30 @@
+{
+    "items": [
+        {
+            "id": "KRA01A",
+            "name": "Paczkomat Krakow 01A",
+            "type": "APM",
+            "status": "active",
+            "address": {
+                "street": "ul. Krakowska",
+                "buildingNumber": "1",
+                "city": "Krakow",
+                "postalCode": "30-001",
+                "countryCode": "PL"
+            },
+            "coordinates": {
+                "latitude": 50.0647,
+                "longitude": 19.945
+            }
+        },
+        {
+            "id": "WAW02B",
+            "name": "Paczkomat Warszawa 02B",
+            "type": "APM",
+            "status": "active"
+        }
+    ],
+    "totalItems": 2,
+    "page": 1,
+    "perPage": 25
+}

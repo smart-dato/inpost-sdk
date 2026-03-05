@@ -1,0 +1,27 @@
+{
+    "id": "ship_123",
+    "status": "in_transit",
+    "trackingNumber": "6340012345678901234",
+    "sender": {
+        "name": "Jan Kowalski",
+        "email": "jan@example.com"
+    },
+    "recipient": {
+        "name": "Anna Nowak",
+        "email": "anna@example.com"
+    },
+    "origin": {
+        "pointId": "KRA01A"
+    },
+    "destination": {
+        "pointId": "WAW02B"
+    },
+    "parcels": [
+        {
+            "id": "parcel_1",
+            "trackingNumber": "6340012345678901234"
+        }
+    ],
+    "createdAt": "2026-03-05T10:00:00Z",
+    "updatedAt": "2026-03-05T12:00:00Z"
+}
