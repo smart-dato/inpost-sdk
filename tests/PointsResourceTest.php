@@ -3,7 +3,7 @@
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\PointsConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
 use Smartdato\InPost\Data\Points\PointData;
 use Smartdato\InPost\Data\Points\PointListData;
 use Smartdato\InPost\Resources\PointsResource;
@@ -11,7 +11,7 @@ use Smartdato\InPost\Resources\PointsResource;
 function pointsResource(MockClient $mockClient): PointsResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:points:read');
-    $connector = new PointsConnector($auth, 'https://api.test/location/v1');
+    $connector = new InPostConnector($auth, 'https://api.test/location/v1');
     $connector->withMockClient($mockClient);
 
     return new PointsResource($connector);

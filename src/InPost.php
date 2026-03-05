@@ -3,11 +3,7 @@
 namespace Smartdato\InPost;
 
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\PickupsConnector;
-use Smartdato\InPost\Connectors\PointsConnector;
-use Smartdato\InPost\Connectors\ReturnsConnector;
-use Smartdato\InPost\Connectors\ShippingConnector;
-use Smartdato\InPost\Connectors\TrackingConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
 use Smartdato\InPost\Resources\PickupsResource;
 use Smartdato\InPost\Resources\PointsResource;
 use Smartdato\InPost\Resources\ReturnsResource;
@@ -16,6 +12,14 @@ use Smartdato\InPost\Resources\TrackingResource;
 
 class InPost
 {
+    public const SCOPE_MAIN = 'api:shipments:read api:shipments:write api:points:read api:tracking:read api:returns:read api:returns:write';
+
+    public const SCOPE_PICKUPS = 'api:one-time-pickups:read api:one-time-pickups:write';
+
+    public const DEFAULT_TOKEN_URL = 'https://api.inpost-group.com/oauth2/token';
+
+    public const DEFAULT_PICKUPS_TOKEN_URL = 'https://account.inpost-group.com/oauth2/token';
+
     private ?ShippingResource $shippingResource = null;
 
     private ?PointsResource $pointsResource = null;
@@ -27,11 +31,11 @@ class InPost
     private ?PickupsResource $pickupsResource = null;
 
     public function __construct(
-        protected ShippingConnector $shippingConnector,
-        protected PointsConnector $pointsConnector,
-        protected TrackingConnector $trackingConnector,
-        protected ReturnsConnector $returnsConnector,
-        protected PickupsConnector $pickupsConnector,
+        protected InPostConnector $shippingConnector,
+        protected InPostConnector $pointsConnector,
+        protected InPostConnector $trackingConnector,
+        protected InPostConnector $returnsConnector,
+        protected InPostConnector $pickupsConnector,
         protected string $organizationId,
     ) {}
 
@@ -53,29 +57,29 @@ class InPost
      */
     public static function make(array $config): self
     {
-        $tokenUrl = $config['token_url'] ?? 'https://api.inpost-group.com/oauth2/token';
-        $pickupsTokenUrl = $config['pickups_token_url'] ?? 'https://account.inpost-group.com/oauth2/token';
+        $tokenUrl = $config['token_url'] ?? self::DEFAULT_TOKEN_URL;
+        $pickupsTokenUrl = $config['pickups_token_url'] ?? self::DEFAULT_PICKUPS_TOKEN_URL;
 
         $mainAuth = new InPostAuthenticator(
             clientId: $config['client_id'],
             clientSecret: $config['client_secret'],
             tokenUrl: $tokenUrl,
-            scope: 'api:shipments:read api:shipments:write api:points:read api:tracking:read api:returns:read api:returns:write',
+            scope: self::SCOPE_MAIN,
         );
 
         $pickupsAuth = new InPostAuthenticator(
             clientId: $config['client_id'],
             clientSecret: $config['client_secret'],
             tokenUrl: $pickupsTokenUrl,
-            scope: 'api:one-time-pickups:read api:one-time-pickups:write',
+            scope: self::SCOPE_PICKUPS,
         );
 
         return new self(
-            shippingConnector: new ShippingConnector($mainAuth, $config['shipping_url'] ?? null),
-            pointsConnector: new PointsConnector($mainAuth, $config['points_url'] ?? null),
-            trackingConnector: new TrackingConnector($mainAuth, $config['tracking_url'] ?? null),
-            returnsConnector: new ReturnsConnector($mainAuth, $config['returns_url'] ?? null),
-            pickupsConnector: new PickupsConnector($pickupsAuth, $config['pickups_url'] ?? null),
+            shippingConnector: new InPostConnector($mainAuth, $config['shipping_url'] ?? null, 'shipping'),
+            pointsConnector: new InPostConnector($mainAuth, $config['points_url'] ?? null, 'points'),
+            trackingConnector: new InPostConnector($mainAuth, $config['tracking_url'] ?? null, 'tracking'),
+            returnsConnector: new InPostConnector($mainAuth, $config['returns_url'] ?? null, 'returns'),
+            pickupsConnector: new InPostConnector($pickupsAuth, $config['pickups_url'] ?? null, 'pickups'),
             organizationId: $config['organization_id'],
         );
     }

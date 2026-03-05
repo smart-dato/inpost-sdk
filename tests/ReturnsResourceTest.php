@@ -3,7 +3,7 @@
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\ReturnsConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
 use Smartdato\InPost\Data\Returns\CreateReturnShipmentData;
 use Smartdato\InPost\Data\Returns\ReturnShipmentData;
 use Smartdato\InPost\Resources\ReturnsResource;
@@ -11,7 +11,7 @@ use Smartdato\InPost\Resources\ReturnsResource;
 function returnsResource(MockClient $mockClient): ReturnsResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:returns:read');
-    $connector = new ReturnsConnector($auth, 'https://api.test/returns/v1');
+    $connector = new InPostConnector($auth, 'https://api.test/returns/v1');
     $connector->withMockClient($mockClient);
 
     return new ReturnsResource($connector, 'org-123');

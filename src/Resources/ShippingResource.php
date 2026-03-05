@@ -3,8 +3,8 @@
 namespace Smartdato\InPost\Resources;
 
 use Saloon\Http\BaseResource;
+use Smartdato\InPost\Data\Shared\LabelData;
 use Smartdato\InPost\Data\Shipping\CreateShipmentData;
-use Smartdato\InPost\Data\Shipping\LabelData;
 use Smartdato\InPost\Data\Shipping\ShipmentData;
 use Smartdato\InPost\Enums\LabelFormat;
 use Smartdato\InPost\Requests\Shipping\CreateShipmentRequest;

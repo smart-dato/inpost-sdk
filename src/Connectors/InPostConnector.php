@@ -6,19 +6,27 @@ use Saloon\Contracts\Authenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
 use Saloon\Traits\Plugins\AcceptsJson;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 use Smartdato\InPost\Auth\InPostAuthenticator;
 use Smartdato\InPost\Exceptions\InPostApiException;
 use Smartdato\InPost\Exceptions\InPostNotFoundException;
 use Smartdato\InPost\Exceptions\InPostValidationException;
 
-abstract class InPostConnector extends Connector
+class InPostConnector extends Connector
 {
     use AcceptsJson;
+    use AlwaysThrowOnErrors;
 
     public function __construct(
         protected InPostAuthenticator $inPostAuthenticator,
         protected ?string $baseUrl = null,
+        protected ?string $configKey = null,
     ) {}
+
+    public function resolveBaseUrl(): string
+    {
+        return $this->baseUrl ?? (string) config("inpost-sdk.base_urls.{$this->configKey}");
+    }
 
     protected function defaultAuth(): ?Authenticator
     {

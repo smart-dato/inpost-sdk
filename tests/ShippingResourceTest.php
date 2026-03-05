@@ -3,23 +3,21 @@
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\ShippingConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
+use Smartdato\InPost\Data\Shared\ContactData;
 use Smartdato\InPost\Data\Shared\DimensionsData;
+use Smartdato\InPost\Data\Shared\LabelData;
+use Smartdato\InPost\Data\Shared\LocationData;
 use Smartdato\InPost\Data\Shared\WeightData;
 use Smartdato\InPost\Data\Shipping\CreateShipmentData;
-use Smartdato\InPost\Data\Shipping\DestinationData;
-use Smartdato\InPost\Data\Shipping\LabelData;
-use Smartdato\InPost\Data\Shipping\OriginData;
 use Smartdato\InPost\Data\Shipping\ParcelData;
-use Smartdato\InPost\Data\Shipping\RecipientData;
-use Smartdato\InPost\Data\Shipping\SenderData;
 use Smartdato\InPost\Data\Shipping\ShipmentData;
 use Smartdato\InPost\Resources\ShippingResource;
 
 function shippingResource(MockClient $mockClient): ShippingResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:shipments:read');
-    $connector = new ShippingConnector($auth, 'https://api.test/shipping/v2');
+    $connector = new InPostConnector($auth, 'https://api.test/shipping/v2');
     $connector->withMockClient($mockClient);
 
     return new ShippingResource($connector, 'org-123');
@@ -31,10 +29,10 @@ it('can create a shipment', function () {
     ]);
 
     $result = shippingResource($mockClient)->create(new CreateShipmentData(
-        sender: new SenderData(name: 'Jan Kowalski', email: 'jan@example.com'),
-        recipient: new RecipientData(name: 'Anna Nowak', email: 'anna@example.com'),
-        origin: new OriginData(pointId: 'KRA01A'),
-        destination: new DestinationData(pointId: 'WAW02B'),
+        sender: new ContactData(name: 'Jan Kowalski', email: 'jan@example.com'),
+        recipient: new ContactData(name: 'Anna Nowak', email: 'anna@example.com'),
+        origin: new LocationData(pointId: 'KRA01A'),
+        destination: new LocationData(pointId: 'WAW02B'),
         parcels: [
             new ParcelData(
                 type: 'standardParcel',

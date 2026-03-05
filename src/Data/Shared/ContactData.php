@@ -1,11 +1,10 @@
 <?php
 
-namespace Smartdato\InPost\Data\Shipping;
+namespace Smartdato\InPost\Data\Shared;
 
-use Smartdato\InPost\Data\Shared\AddressData;
 use Spatie\LaravelData\Data;
 
-class RecipientData extends Data
+class ContactData extends Data
 {
     public function __construct(
         public readonly ?string $name = null,

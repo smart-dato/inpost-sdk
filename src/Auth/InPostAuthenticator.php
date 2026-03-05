@@ -23,7 +23,7 @@ class InPostAuthenticator implements Authenticator
 
     protected function getToken(): string
     {
-        $cacheKey = 'inpost_oauth_token_'.md5($this->clientId.$this->tokenUrl.$this->scope);
+        $cacheKey = 'inpost_oauth_token_'.md5($this->clientId.'|'.$this->tokenUrl.'|'.$this->scope);
 
         return Cache::remember($cacheKey, $this->getTokenTtl(), function () {
             return $this->fetchToken();

@@ -3,7 +3,7 @@
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\PickupsConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
 use Smartdato\InPost\Data\Pickups\ContactPersonData;
 use Smartdato\InPost\Data\Pickups\CreateOneTimePickupData;
 use Smartdato\InPost\Data\Pickups\CutoffTimeData;
@@ -15,7 +15,7 @@ use Smartdato\InPost\Resources\PickupsResource;
 function pickupsResource(MockClient $mockClient): PickupsResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:one-time-pickups:read');
-    $connector = new PickupsConnector($auth, 'https://api.test/pickups/v1');
+    $connector = new InPostConnector($auth, 'https://api.test/pickups/v1');
     $connector->withMockClient($mockClient);
 
     return new PickupsResource($connector, 'org-123');

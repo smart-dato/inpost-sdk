@@ -1,11 +1,10 @@
 <?php
 
-namespace Smartdato\InPost\Data\Shipping;
+namespace Smartdato\InPost\Data\Shared;
 
-use Smartdato\InPost\Data\Shared\AddressData;
 use Spatie\LaravelData\Data;
 
-class DestinationData extends Data
+class LocationData extends Data
 {
     public function __construct(
         public readonly ?string $pointId = null,

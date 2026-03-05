@@ -6,22 +6,29 @@ use Saloon\Http\Response;
 
 class InPostValidationException extends InPostApiException
 {
-    /** @var array<string, list<string>> */
-    public array $errors;
+    /**
+     * @param  array<string, list<string>>  $errors
+     */
+    public function __construct(
+        Response $response,
+        ?string $type = null,
+        ?string $title = null,
+        ?string $detail = null,
+        public readonly array $errors = [],
+    ) {
+        parent::__construct($response, $type, $title, $detail);
+    }
 
     public static function fromResponse(Response $response): self
     {
         $body = $response->json();
 
-        $instance = new self(
+        return new self(
             response: $response,
             type: $body['type'] ?? null,
             title: $body['title'] ?? null,
             detail: $body['detail'] ?? null,
+            errors: $body['errors'] ?? [],
         );
-
-        $instance->errors = $body['errors'] ?? [];
-
-        return $instance;
     }
 }

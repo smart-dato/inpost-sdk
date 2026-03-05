@@ -3,14 +3,14 @@
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Smartdato\InPost\Auth\InPostAuthenticator;
-use Smartdato\InPost\Connectors\TrackingConnector;
+use Smartdato\InPost\Connectors\InPostConnector;
 use Smartdato\InPost\Data\Tracking\TrackResponseData;
 use Smartdato\InPost\Resources\TrackingResource;
 
 function trackingResource(MockClient $mockClient): TrackingResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:tracking:read');
-    $connector = new TrackingConnector($auth, 'https://api.test/tracking/v1');
+    $connector = new InPostConnector($auth, 'https://api.test/tracking/v1');
     $connector->withMockClient($mockClient);
 
     return new TrackingResource($connector);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Smartdato\InPost\Data\Shipping;
+namespace Smartdato\InPost\Data\Shared;
 
 use Spatie\LaravelData\Data;
 

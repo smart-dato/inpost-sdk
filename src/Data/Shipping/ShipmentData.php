@@ -2,6 +2,8 @@
 
 namespace Smartdato\InPost\Data\Shipping;
 
+use Smartdato\InPost\Data\Shared\ContactData;
+use Smartdato\InPost\Data\Shared\LocationData;
 use Spatie\LaravelData\Data;
 
 class ShipmentData extends Data
@@ -14,10 +16,10 @@ class ShipmentData extends Data
         public readonly ?string $id = null,
         public readonly ?string $status = null,
         public readonly ?string $trackingNumber = null,
-        public readonly ?SenderData $sender = null,
-        public readonly ?RecipientData $recipient = null,
-        public readonly ?OriginData $origin = null,
-        public readonly ?DestinationData $destination = null,
+        public readonly ?ContactData $sender = null,
+        public readonly ?ContactData $recipient = null,
+        public readonly ?LocationData $origin = null,
+        public readonly ?LocationData $destination = null,
         public readonly ?array $parcels = null,
         public readonly ?ReferencesData $references = null,
         public readonly ?array $valueAddedServices = null,

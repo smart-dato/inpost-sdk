@@ -2,6 +2,8 @@
 
 namespace Smartdato\InPost\Data\Shipping;
 
+use Smartdato\InPost\Data\Shared\ContactData;
+use Smartdato\InPost\Data\Shared\LocationData;
 use Spatie\LaravelData\Data;
 
 class CreateShipmentData extends Data
@@ -11,10 +13,10 @@ class CreateShipmentData extends Data
      * @param  list<ValueAddedServiceData>|null  $valueAddedServices
      */
     public function __construct(
-        public readonly SenderData $sender,
-        public readonly RecipientData $recipient,
-        public readonly OriginData $origin,
-        public readonly DestinationData $destination,
+        public readonly ContactData $sender,
+        public readonly ContactData $recipient,
+        public readonly LocationData $origin,
+        public readonly LocationData $destination,
         public readonly array $parcels,
         public readonly ?ReferencesData $references = null,
         public readonly ?array $valueAddedServices = null,
