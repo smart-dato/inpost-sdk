@@ -3,18 +3,22 @@
     "status": "in_transit",
     "trackingNumber": "6340012345678901234",
     "sender": {
-        "name": "Jan Kowalski",
+        "firstName": "Jan",
+        "lastName": "Kowalski",
         "email": "jan@example.com"
     },
     "recipient": {
-        "name": "Anna Nowak",
+        "firstName": "Anna",
+        "lastName": "Nowak",
         "email": "anna@example.com"
     },
     "origin": {
-        "pointId": "KRA01A"
+        "pointId": "KRA01A",
+        "countryCode": "PL"
     },
     "destination": {
-        "pointId": "WAW02B"
+        "pointId": "WAW02B",
+        "countryCode": "PL"
     },
     "parcels": [
         {

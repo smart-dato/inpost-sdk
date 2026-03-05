@@ -3,34 +3,38 @@
     "status": "created",
     "trackingNumber": "6340012345678901234",
     "sender": {
-        "name": "Jan Kowalski",
+        "firstName": "Jan",
+        "lastName": "Kowalski",
         "email": "jan@example.com",
-        "phone": "+48123456789"
+        "phone": "48123456789"
     },
     "recipient": {
-        "name": "Anna Nowak",
+        "firstName": "Anna",
+        "lastName": "Nowak",
         "email": "anna@example.com",
-        "phone": "+48987654321"
+        "phone": "48987654321"
     },
     "origin": {
-        "pointId": "KRA01A"
+        "pointId": "KRA01A",
+        "countryCode": "PL"
     },
     "destination": {
-        "pointId": "WAW02B"
+        "pointId": "WAW02B",
+        "countryCode": "PL"
     },
     "parcels": [
         {
             "id": "parcel_1",
-            "type": "standardParcel",
+            "type": "STANDARD",
             "dimensions": {
                 "length": 200,
                 "width": 150,
                 "height": 100,
-                "unit": "mm"
+                "unit": "MM"
             },
             "weight": {
                 "amount": 2.5,
-                "unit": "kg"
+                "unit": "KG"
             },
             "trackingNumber": "6340012345678901234"
         }

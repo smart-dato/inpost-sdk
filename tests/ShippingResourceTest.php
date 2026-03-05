@@ -29,10 +29,10 @@ it('can create a shipment', function () {
     ]);
 
     $result = shippingResource($mockClient)->create(new CreateShipmentData(
-        sender: new ContactData(name: 'Jan Kowalski', email: 'jan@example.com'),
-        recipient: new ContactData(name: 'Anna Nowak', email: 'anna@example.com'),
-        origin: new LocationData(pointId: 'KRA01A'),
-        destination: new LocationData(pointId: 'WAW02B'),
+        sender: new ContactData(firstName: 'Jan', lastName: 'Kowalski', email: 'jan@example.com'),
+        recipient: new ContactData(firstName: 'Anna', lastName: 'Nowak', email: 'anna@example.com'),
+        origin: new LocationData(countryCode: 'PL', pointId: 'KRA01A'),
+        destination: new LocationData(countryCode: 'PL', pointId: 'WAW02B'),
         parcels: [
             new ParcelData(
                 type: 'standardParcel',

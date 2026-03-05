@@ -48,6 +48,8 @@ class InPost
      *     organization_id: string,
      *     token_url?: string,
      *     pickups_token_url?: string,
+     *     scope?: string,
+     *     pickups_scope?: string,
      *     shipping_url?: string,
      *     points_url?: string,
      *     tracking_url?: string,
@@ -64,14 +66,14 @@ class InPost
             clientId: $config['client_id'],
             clientSecret: $config['client_secret'],
             tokenUrl: $tokenUrl,
-            scope: self::SCOPE_MAIN,
+            scope: $config['scope'] ?? self::SCOPE_MAIN,
         );
 
         $pickupsAuth = new InPostAuthenticator(
             clientId: $config['client_id'],
             clientSecret: $config['client_secret'],
             tokenUrl: $pickupsTokenUrl,
-            scope: self::SCOPE_PICKUPS,
+            scope: $config['pickups_scope'] ?? self::SCOPE_PICKUPS,
         );
 
         return new self(
