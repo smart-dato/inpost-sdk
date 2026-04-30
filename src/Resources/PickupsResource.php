@@ -3,6 +3,7 @@
 namespace Smartdato\InPost\Resources;
 
 use Saloon\Http\BaseResource;
+use Saloon\Http\Connector;
 use Smartdato\InPost\Data\Pickups\CreateOneTimePickupData;
 use Smartdato\InPost\Data\Pickups\CutoffTimeData;
 use Smartdato\InPost\Data\Pickups\OneTimePickupData;
@@ -16,7 +17,7 @@ use Smartdato\InPost\Requests\Pickups\ListOneTimePickupsRequest;
 class PickupsResource extends BaseResource
 {
     public function __construct(
-        \Saloon\Http\Connector $connector,
+        Connector $connector,
         protected readonly string $organizationId,
     ) {
         parent::__construct($connector);

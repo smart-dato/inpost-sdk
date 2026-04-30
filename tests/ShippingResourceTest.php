@@ -72,5 +72,5 @@ it('can get a shipment label', function () {
     expect($result)
         ->toBeInstanceOf(LabelData::class)
         ->content->toBe(base64_encode('PDF-CONTENT'))
-        ->contentType->toBe('application/pdf');
+        ->contentType->toBe('application/pdf;format=A6');
 });

@@ -13,7 +13,7 @@ class GetShipmentLabelRequest extends Request
     public function __construct(
         protected readonly string $organizationId,
         protected readonly string $trackingNumber,
-        protected readonly LabelFormat $format = LabelFormat::PDF,
+        protected readonly LabelFormat $format = LabelFormat::PdfA6,
     ) {}
 
     public function resolveEndpoint(): string

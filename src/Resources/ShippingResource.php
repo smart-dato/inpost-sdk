@@ -3,6 +3,7 @@
 namespace Smartdato\InPost\Resources;
 
 use Saloon\Http\BaseResource;
+use Saloon\Http\Connector;
 use Smartdato\InPost\Data\Shared\LabelData;
 use Smartdato\InPost\Data\Shipping\CreateShipmentData;
 use Smartdato\InPost\Data\Shipping\ShipmentData;
@@ -14,7 +15,7 @@ use Smartdato\InPost\Requests\Shipping\GetShipmentRequest;
 class ShippingResource extends BaseResource
 {
     public function __construct(
-        \Saloon\Http\Connector $connector,
+        Connector $connector,
         protected readonly string $organizationId,
     ) {
         parent::__construct($connector);
@@ -38,7 +39,7 @@ class ShippingResource extends BaseResource
         return ShipmentData::from($response->json());
     }
 
-    public function label(string $trackingNumber, LabelFormat $format = LabelFormat::PDF): LabelData
+    public function label(string $trackingNumber, LabelFormat $format = LabelFormat::PdfA6): LabelData
     {
         $response = $this->connector->send(
             new GetShipmentLabelRequest($this->organizationId, $trackingNumber, $format)

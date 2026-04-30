@@ -3,6 +3,7 @@
 namespace Smartdato\InPost\Resources;
 
 use Saloon\Http\BaseResource;
+use Saloon\Http\Connector;
 use Smartdato\InPost\Data\Returns\CreateReturnShipmentData;
 use Smartdato\InPost\Data\Returns\ReturnShipmentData;
 use Smartdato\InPost\Data\Shared\LabelData;
@@ -14,7 +15,7 @@ use Smartdato\InPost\Requests\Returns\GetReturnShipmentRequest;
 class ReturnsResource extends BaseResource
 {
     public function __construct(
-        \Saloon\Http\Connector $connector,
+        Connector $connector,
         protected readonly string $organizationId,
     ) {
         parent::__construct($connector);
@@ -38,7 +39,7 @@ class ReturnsResource extends BaseResource
         return ReturnShipmentData::from($response->json());
     }
 
-    public function label(string $shipmentId, LabelFormat $format = LabelFormat::PDF): LabelData
+    public function label(string $shipmentId, LabelFormat $format = LabelFormat::PdfA6): LabelData
     {
         $response = $this->connector->send(
             new GetReturnLabelRequest($this->organizationId, $shipmentId, $format)

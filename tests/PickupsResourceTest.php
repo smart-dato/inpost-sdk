@@ -10,6 +10,7 @@ use Smartdato\InPost\Data\Pickups\CutoffTimeData;
 use Smartdato\InPost\Data\Pickups\OneTimePickupData;
 use Smartdato\InPost\Data\Pickups\PickupTimeData;
 use Smartdato\InPost\Data\Shared\AddressData;
+use Smartdato\InPost\Enums\PickupStatus;
 use Smartdato\InPost\Resources\PickupsResource;
 
 function pickupsResource(MockClient $mockClient): PickupsResource
@@ -36,7 +37,7 @@ it('can create a one-time pickup', function () {
     expect($result)
         ->toBeInstanceOf(OneTimePickupData::class)
         ->id->toBe('pickup_789')
-        ->status->toBe(\Smartdato\InPost\Enums\PickupStatus::REQUESTED);
+        ->status->toBe(PickupStatus::REQUESTED);
 });
 
 it('can get a one-time pickup', function () {
