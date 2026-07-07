@@ -3,23 +3,50 @@
         {
             "trackingNumber": "6340012345678901234",
             "status": "delivered",
-            "service": "inpost_locker_standard",
             "events": [
                 {
-                    "type": "delivery",
+                    "eventTimestamp": "2026-03-05T14:30:00.031+00:00",
+                    "eventCode": "LMD.9001",
                     "status": "delivered",
-                    "description": "Parcel delivered to locker",
-                    "datetime": "2026-03-05T14:30:00Z",
-                    "locationName": "WAW02B"
+                    "eventId": "eeeeeeee-4bdb-4cc4-9a1e-17fcfa56bc3a#LMD.9001",
+                    "location": {
+                        "id": "PL_ITCES432MMM",
+                        "address": "Czerniakowska 87a",
+                        "city": "Warsaw",
+                        "country": "PL",
+                        "name": "ITCES432MMM",
+                        "postalCode": "00-718",
+                        "type": "LOCKER_POINT"
+                    }
                 },
                 {
-                    "type": "transit",
-                    "status": "in_transit",
-                    "description": "Parcel in transit",
-                    "datetime": "2026-03-05T08:00:00Z",
-                    "locationName": "Sorting Hub Warsaw"
+                    "eventTimestamp": "2026-03-05T08:00:00.000+00:00",
+                    "eventCode": "LMD.1401",
+                    "eventId": "eeeeeeee-4bdb-4cc4-9a1e-17fcfa56bc3a#LMD.1401",
+                    "location": {
+                        "city": "Warsaw",
+                        "country": "PL",
+                        "type": "DEPOT"
+                    }
                 }
-            ]
+            ],
+            "origin": {
+                "city": "Milano",
+                "country": "IT",
+                "type": "ADDRESS"
+            },
+            "destination": {
+                "id": "PL_ITCES432MMM",
+                "city": "Warsaw",
+                "country": "PL",
+                "type": "LOCKER_POINT"
+            },
+            "delivery": {
+                "recipientName": "Jan Kowalski"
+            },
+            "shipment": {
+                "type": "LOCKER"
+            }
         }
     ]
 }
