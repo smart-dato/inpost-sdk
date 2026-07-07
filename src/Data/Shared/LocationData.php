@@ -13,6 +13,7 @@ class LocationData extends Data
         public readonly ?string $countryCode = null,
         public readonly ?string $pointId = null,
         public readonly ?string $street = null,
+        public readonly ?string $houseNumber = null,
         public readonly ?string $city = null,
         public readonly ?string $postalCode = null,
         public readonly ?string $shippingMethod = null,

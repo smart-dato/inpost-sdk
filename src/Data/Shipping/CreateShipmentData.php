@@ -21,5 +21,7 @@ class CreateShipmentData extends Data
         public readonly ?ReferencesData $references = null,
         public readonly ?array $valueAddedServices = null,
         public readonly ?CustomsClearanceData $customsClearance = null,
+        public readonly ?bool $enableDropOffCode = null,
+        public readonly ?string $priority = null,
     ) {}
 }
