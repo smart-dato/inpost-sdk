@@ -7,10 +7,10 @@ use Spatie\LaravelData\Data;
 class TrackingEventData extends Data
 {
     public function __construct(
-        public readonly ?string $type = null,
+        public readonly ?string $eventTimestamp = null,
+        public readonly ?string $eventCode = null,
         public readonly ?string $status = null,
-        public readonly ?string $description = null,
-        public readonly ?string $datetime = null,
-        public readonly ?string $locationName = null,
+        public readonly ?string $eventId = null,
+        public readonly ?EventLocationData $location = null,
     ) {}
 }
