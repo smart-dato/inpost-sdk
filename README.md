@@ -114,15 +114,17 @@ echo $label->contentType; // "application/pdf"
 ```php
 use Smartdato\InPost\Facades\InPost;
 
-// List points with optional filters
-$points = InPost::points()->list(['type' => 'APM', 'city' => 'Krakow']);
+// List points, paginated with `page` and `perPage` (the API defaults to 25 per page)
+$points = InPost::points()->list(['type' => 'APM', 'page' => 1, 'perPage' => 500]);
+
+echo "{$points->count} points in {$points->totalPages} pages\n";
 
 foreach ($points->items as $point) {
-    echo "{$point->id} — {$point->name}\n";
+    echo "{$point->id} — {$point->displayName} — {$point->address->country}\n";
 }
 
 // Get a specific point
-$point = InPost::points()->get('KRA01A');
+$point = InPost::points()->get('PL_ADA01M');
 echo $point->coordinates->latitude;
 
 // Search by location

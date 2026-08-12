@@ -93,13 +93,13 @@ it('can obtain an OAuth token from the stage API', function () {
     $inpost = sandboxInPost();
 
     // Trigger authentication by making any request
-    $result = $inpost->points()->list(['per_page' => 1]);
+    $result = $inpost->points()->list(['perPage' => 1]);
 
     expect($result)->toBeInstanceOf(PointListData::class);
 })->group('sandbox');
 
 it('can list points from the stage API', function () {
-    $result = sandboxInPost()->points()->list(['per_page' => 5]);
+    $result = sandboxInPost()->points()->list(['perPage' => 5]);
 
     expect($result)
         ->toBeInstanceOf(PointListData::class)
@@ -109,7 +109,7 @@ it('can list points from the stage API', function () {
 
 it('can get a single point from the stage API', function () {
     // First list to get a valid point ID
-    $list = sandboxInPost()->points()->list(['per_page' => 1]);
+    $list = sandboxInPost()->points()->list(['perPage' => 1]);
     $pointId = $list->items[0]->id;
 
     $result = sandboxInPost()->points()->get($pointId);

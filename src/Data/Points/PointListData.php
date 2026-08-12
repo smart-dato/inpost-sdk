@@ -11,8 +11,9 @@ class PointListData extends Data
      */
     public function __construct(
         public readonly array $items,
-        public readonly ?int $totalItems = null,
+        public readonly ?int $count = null,
         public readonly ?int $page = null,
         public readonly ?int $perPage = null,
+        public readonly ?int $totalPages = null,
     ) {}
 }

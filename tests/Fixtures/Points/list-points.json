@@ -1,30 +1,131 @@
 {
+    "count": 115792,
+    "page": 1,
+    "perPage": 2,
+    "totalPages": 57896,
     "items": [
         {
-            "id": "KRA01A",
-            "name": "Paczkomat Krakow 01A",
-            "type": "APM",
-            "status": "active",
             "address": {
-                "street": "ul. Krakowska",
-                "buildingNumber": "1",
-                "city": "Krakow",
-                "postalCode": "30-001",
-                "countryCode": "PL"
+                "country": "PL",
+                "administrativeArea": "lubelskie",
+                "city": "Adamów",
+                "street": "Kościuszki",
+                "buildingNumber": "27",
+                "postalCode": "21-412"
             },
+            "capabilities": [
+                "PARCEL_COLLECT",
+                "PARCEL_SEND"
+            ],
             "coordinates": {
-                "latitude": 50.0647,
-                "longitude": 19.945
-            }
+                "latitude": 51.73834,
+                "longitude": 22.26405
+            },
+            "country": "PL",
+            "description": {
+                "content": "Przy sklepie Lewiatan",
+                "translations": []
+            },
+            "description2": {
+                "content": null,
+                "translations": []
+            },
+            "description3": {
+                "content": null,
+                "translations": []
+            },
+            "displayName": "InPost Paczkomat ADA01M",
+            "id": "PL_ADA01M",
+            "imageUrl": "https://static.easypack24.net/points/pl/images/ADA01M.jpg",
+            "location247": true,
+            "locationType": "OUTDOOR",
+            "operatingHours": {
+                "customer": null
+            },
+            "type": "APM"
         },
         {
-            "id": "WAW02B",
-            "name": "Paczkomat Warszawa 02B",
-            "type": "APM",
-            "status": "active"
+            "address": {
+                "country": "AT",
+                "administrativeArea": null,
+                "city": "Linz",
+                "street": "Altenberger Straße",
+                "buildingNumber": "7",
+                "postalCode": "4040"
+            },
+            "capabilities": [
+                "PARCEL_COLLECT",
+                "PARCEL_SEND"
+            ],
+            "coordinates": {
+                "latitude": 48.33129,
+                "longitude": 14.31727
+            },
+            "country": "AT",
+            "description": {
+                "content": "Wunsch-Poststation",
+                "translations": []
+            },
+            "description2": {
+                "content": null,
+                "translations": []
+            },
+            "description3": {
+                "content": null,
+                "translations": []
+            },
+            "displayName": "InPost Partnerpunkt AT98217CB",
+            "id": "AT_AT98217CB",
+            "imageUrl": "https://static.easypack24.net/points/at/images/AT98217CB.jpg",
+            "location247": false,
+            "locationType": "INDOOR",
+            "operatingHours": {
+                "customer": {
+                    "monday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "tuesday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "wednesday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "thursday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "friday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "saturday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ],
+                    "sunday": [
+                        {
+                            "start": "06:00",
+                            "end": "22:00"
+                        }
+                    ]
+                }
+            },
+            "type": "PUDO"
         }
-    ],
-    "totalItems": 2,
-    "page": 1,
-    "perPage": 25
+    ]
 }

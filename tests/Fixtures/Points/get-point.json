@@ -1,27 +1,41 @@
 {
-    "id": "KRA01A",
-    "name": "Paczkomat Krakow 01A",
-    "type": "APM",
-    "status": "active",
     "address": {
-        "street": "ul. Krakowska",
-        "buildingNumber": "1",
-        "city": "Krakow",
-        "postalCode": "30-001",
-        "countryCode": "PL"
+        "country": "PL",
+        "administrativeArea": "lubelskie",
+        "city": "Adamów",
+        "street": "Kościuszki",
+        "buildingNumber": "27",
+        "postalCode": "21-412"
     },
+    "capabilities": [
+        "PARCEL_COLLECT",
+        "PARCEL_SEND"
+    ],
     "coordinates": {
-        "latitude": 50.0647,
-        "longitude": 19.945
+        "latitude": 51.73834,
+        "longitude": 22.26405
     },
+    "country": "PL",
+    "description": {
+        "content": "Przy sklepie Lewiatan",
+        "translations": []
+    },
+    "description2": {
+        "content": null,
+        "translations": []
+    },
+    "description3": {
+        "content": null,
+        "translations": []
+    },
+    "displayName": "InPost Paczkomat ADA01M",
+    "guaranteedLockerTemperatures": null,
+    "id": "PL_ADA01M",
+    "imageUrl": "https://static.easypack24.net/points/pl/images/ADA01M.jpg",
+    "location247": true,
+    "locationType": "OUTDOOR",
     "operatingHours": {
-        "monday": "06:00-22:00",
-        "tuesday": "06:00-22:00",
-        "wednesday": "06:00-22:00",
-        "thursday": "06:00-22:00",
-        "friday": "06:00-22:00",
-        "saturday": "08:00-20:00",
-        "sunday": "10:00-18:00"
+        "customer": null
     },
-    "capabilities": ["parcel_send", "parcel_collect"]
+    "type": "APM"
 }
