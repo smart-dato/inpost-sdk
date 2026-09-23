@@ -2,15 +2,15 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/smart-dato/inpost-sdk.svg?style=flat-square)](https://packagist.org/packages/smart-dato/inpost-sdk)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/inpost-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/smart-dato/inpost-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/inpost-sdk/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/smart-dato/inpost-sdk/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/inpost-sdk/code-style.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/smart-dato/inpost-sdk/actions?query=workflow%3A%22Code+style%22+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/smart-dato/inpost-sdk.svg?style=flat-square)](https://packagist.org/packages/smart-dato/inpost-sdk)
 
-A Laravel SDK for the InPost API, covering Shipping, Points, Tracking, Returns, and One-Time Pickups. Built with [Saloon v3](https://docs.saloon.dev) and [Spatie Laravel Data](https://spatie.be/docs/laravel-data).
+A Laravel SDK for the InPost API, covering Shipping, Points, Tracking, Returns, and One-Time Pickups. Built with [Saloon v4](https://docs.saloon.dev) and [Spatie Laravel Data](https://spatie.be/docs/laravel-data).
 
 ## Requirements
 
 - PHP 8.4+
-- Laravel 11 or 12
+- Laravel 11 – 13
 
 ## Installation
 
@@ -300,10 +300,6 @@ composer test
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
