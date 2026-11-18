@@ -2,6 +2,17 @@
 
 All notable changes to `InPost SDK` will be documented in this file.
 
+## v0.0.11 - 2026-11-18
+
+### What's Changed
+
+* build(deps): bump shivammathur/setup-php from 2.37.2 to 2.40.0 by @dependabot[bot] in https://github.com/smart-dato/inpost-sdk/pull/13
+* Require PHP 8.4+ and Laravel 12+ by @michael-tscholl in https://github.com/smart-dato/inpost-sdk/pull/14
+* ci: squash-merge Dependabot PRs by @michael-tscholl in https://github.com/smart-dato/inpost-sdk/pull/15
+* fix(tracking): call the current /track endpoint by @michael-tscholl in https://github.com/smart-dato/inpost-sdk/pull/16
+
+**Full Changelog**: https://github.com/smart-dato/inpost-sdk/compare/v0.0.10...v0.0.11
+
 ## v0.0.10 - 2026-09-23
 
 ### What's Changed
