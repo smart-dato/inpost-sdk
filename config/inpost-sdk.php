@@ -10,7 +10,7 @@ return [
     'base_urls' => [
         'shipping' => env('INPOST_SHIPPING_URL', 'https://api.inpost-group.com/shipping/v2'),
         'points' => env('INPOST_POINTS_URL', 'https://api.inpost-group.com/location/v1'),
-        'tracking' => env('INPOST_TRACKING_URL', 'https://api.inpost-group.com/tracking/v1'),
+        'tracking' => env('INPOST_TRACKING_URL', 'https://api.inpost-group.com/track'),
         'returns' => env('INPOST_RETURNS_URL', 'https://api.inpost-group.com/returns/v1'),
         'pickups' => env('INPOST_PICKUPS_URL', 'https://api.inpost.pl/pickups/v1'),
     ],

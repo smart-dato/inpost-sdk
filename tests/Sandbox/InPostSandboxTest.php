@@ -40,7 +40,7 @@ const STAGE_CONFIG = [
     'token_url' => 'https://stage-api.inpost-group.com/oauth2/token',
     'shipping_url' => 'https://stage-api.inpost-group.com/shipping/v2',
     'points_url' => 'https://stage-api.inpost-group.com/location/v1',
-    'tracking_url' => 'https://stage-api.inpost-group.com/tracking/v1',
+    'tracking_url' => 'https://stage-api.inpost-group.com/track',
     'returns_url' => 'https://stage-api.inpost-group.com/returns/v1',
 ];
 
