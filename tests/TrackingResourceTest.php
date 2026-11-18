@@ -13,7 +13,7 @@ use Smartdato\InPost\Resources\TrackingResource;
 function trackingResource(MockClient $mockClient): TrackingResource
 {
     $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:tracking:read');
-    $connector = new InPostConnector($auth, 'https://api.test/tracking/v1');
+    $connector = new InPostConnector($auth, 'https://api.test/track');
     $connector->withMockClient($mockClient);
 
     return new TrackingResource($connector);
@@ -58,4 +58,20 @@ it('can track parcels returning the raw response', function () {
 
     expect($response)->toBeInstanceOf(Response::class)
         ->and($response->json('parcels.0.events.0.eventCode'))->toBe('LMD.9001');
+});
+
+it('tracks parcels on the track endpoint by default', function () {
+    $mockClient = new MockClient([
+        MockResponse::make(fixtureJson('Tracking/track-parcels')),
+    ]);
+
+    $auth = new InPostAuthenticator('test-id', 'test-secret', 'https://token.test', 'api:tracking:read');
+    $connector = new InPostConnector($auth, null, 'tracking');
+    $connector->withMockClient($mockClient);
+
+    (new TrackingResource($connector))->track(['3996477594']);
+
+    $mockClient->assertSent(
+        fn ($request, Response $response): bool => $response->getPendingRequest()->getUrl() === 'https://api.inpost-group.com/track/parcels'
+    );
 });
